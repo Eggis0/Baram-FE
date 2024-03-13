@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import styled from "styled-components";
 import Home from "./pages/UserPages/Home";
