@@ -2,7 +2,7 @@ import MenuBar from "../../components/layout/MenuBar";
 import Header from "../../components/layout/Header";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 import RecentPosts from "../../components/page/Home/RecentPosts";
 import Footer from "../../components/layout/Footer";
 import { useCookies } from "react-cookie";
@@ -20,7 +20,6 @@ const CampusMoveBox = styled.div`
   padding: 0px 20px;
   border-bottom: 1px solid #eeeeee;
 `;
-
 
 // 학생회 캠퍼스 선택 박스 Child
 const CampusBox = styled.button`
@@ -51,14 +50,13 @@ const ActiveBorderBox = styled.div`
   width: 100%;
   height: 100%;
   position: relative;
-  
 `;
 
 const ActiveBorder = styled.div`
   position: absolute;
   bottom: 0;
-  left :  ${({ position }) => (position == 0 ? "0%" : "50%") };
-  
+  left: ${({ position }) => (position == 0 ? "0%" : "50%")};
+
   width: 50%;
   transition: left 0.3s ease, width 0.3s ease;
   border-radius: 3px;
@@ -70,7 +68,7 @@ const ActiveBorderColor = styled.div`
   border-radius: 100px;
   width: 100px;
   margin: 0px auto;
-  background-color: #6093FF;
+  background-color: #6093ff;
 `;
 
 const HomeContainer = styled.div`
@@ -106,7 +104,7 @@ const SearchBox = styled.div`
 const InputBox = styled.input`
   font-weight: 400;
   font-size: 16px;
-  color: #000000; 
+  color: #000000;
   outline: none;
   border: none;
   background: none;
@@ -114,7 +112,7 @@ const InputBox = styled.input`
   flex: 1;
   width: 0px;
   &::placeholder {
-    color: #bcbcbc; 
+    color: #bcbcbc;
     font-weight: 400;
     font-size: 16px;
   }
@@ -144,11 +142,12 @@ const ResultBox = styled.ul`
 
 const ResultPart = styled.div`
   padding: 10px 0px;
-  border-bottom:   ${({ isCouncilResult }) => (isCouncilResult ? "1px solid #eeeeee" : "none")};
+  border-bottom: ${({ isCouncilResult }) =>
+    isCouncilResult ? "1px solid #eeeeee" : "none"};
 `;
 
 const CouncilName2 = styled.div`
-  color : #828282; 
+  color: #828282;
 `;
 const CouncilImg = styled.img`
   width: 32px;
@@ -163,19 +162,18 @@ const CouncilResult = styled.div`
   margin: 10px 0px;
 `;
 
-
 const CouncilName = styled.span`
-  color : #6093FF; 
+  color: #6093ff;
 `;
 
 const Request = styled.span`
   display: inline-block;
-  background: #6093FF; 
+  background: #6093ff;
   padding: 5px 10px;
   font-size: 13px;
   border-radius: 100px;
   font-weight: 600;
-  color : #ffffff; 
+  color: #ffffff;
 `;
 
 const NoResult = styled.span`
@@ -184,7 +182,7 @@ const NoResult = styled.span`
   line-height: 25px;
   font-weight: 500;
   border-radius: 100px;
-  color : #d1d1d1; 
+  color: #d1d1d1;
   flex: 1;
 `;
 
@@ -240,15 +238,13 @@ const WriteHearTheVoice = styled.div`
   box-sizing: border-box;
   border-radius: 100px;
   width: 100%;
-  background: #6093FF;
+  background: #6093ff;
   color: #eeeeee;
   text-align: center;
   padding: 7px;
   font-size: 16px;
   font-weight: 700;
-  
 `;
-
 
 const Voices = styled.div`
   margin: 20px 0px;
@@ -265,7 +261,7 @@ const Voice = styled.span`
   font-size: 14px;
   font-weight: 700;
   white-space: nowrap;
-  color:#bcbcbc;
+  color: #bcbcbc;
 `;
 
 const ModalContainer = styled.div`
@@ -282,14 +278,13 @@ const ModalContainer = styled.div`
   /* align-items: center; */
 `;
 const ModalBox2 = styled.div`
-
   margin: 0 auto;
   width: 100%;
   height: 450px;
   max-width: 400px;
   border-radius: 30px 30px 0px 0px;
   background: #ffffff;
-  
+
   position: absolute;
   bottom: 0;
   text-align: center;
@@ -300,10 +295,9 @@ const ModalText = styled.div`
   text-align: center;
   font-size: 20px;
   font-weight: 800;
-  color:#000000;
+  color: #000000;
   /* line-height: 30px; */
 `;
-
 
 const ModalBtnBox = styled.div`
   position: absolute;
@@ -321,13 +315,13 @@ const ModalBtn = styled.button`
   border: none;
   width: 100%;
   /* margin: 0px 20px; */
-  background: ${({ isLeft }) => (isLeft ? '#f5f5f5' : '#6093FF')};
+  background: ${({ isLeft }) => (isLeft ? "#f5f5f5" : "#6093FF")};
   padding: 15px;
   text-align: center;
   border-radius: 15px;
   font-weight: 500;
   font-size: 18px;
-  color:${({ isLeft }) => (isLeft ? '#828282' : '#FFFFFF')};
+  color: ${({ isLeft }) => (isLeft ? "#828282" : "#FFFFFF")};
 `;
 
 const WriteVoiceBox = styled.div`
@@ -337,12 +331,10 @@ const WriteVoiceBox = styled.div`
 const TextBoxTitle = styled.div`
   font-size: 16px;
   font-weight: 700;
-  
 `;
 const TextBoxSubTitle = styled.div`
   font-size: 14px;
   color: #bcbcbc;
-  
 `;
 
 const TextBox = styled.input`
@@ -351,7 +343,7 @@ const TextBox = styled.input`
   height: 40px;
   border-radius: 10px;
   width: 100%;
-  border:none;
+  border: none;
   outline: none;
   padding: 0px 10px;
   box-sizing: border-box;
@@ -369,32 +361,26 @@ const Title = styled.div`
   font-weight: 700;
   margin-bottom: 20px;
   color: #828282;
-
 `;
 
 const SubTitle = styled.div`
   font-size: 18px;
   font-weight: 700;
   text-align: center;
-  
 `;
 
 const Info = styled.div`
- 
   font-size: 14px;
   color: #828282;
   font-weight: 500;
-  & span{
+  & span {
     color: #bcbcbc;
     margin-right: 5px;
   }
-  & div{
+  & div {
     margin: 5px 0px;
   }
 `;
-
-
-
 
 const Home = () => {
   const navigate = useNavigate();
@@ -402,12 +388,11 @@ const Home = () => {
   const [cookies, setCookies] = useCookies();
   const [campus, setCampus] = useState("global");
 
-
   const [opinion, setOpinion] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
 
   const [keyword, setKeyword] = useState("");
-  const [debouncedSearchValue, setDebouncedSearchValue] = useState('');
+  const [debouncedSearchValue, setDebouncedSearchValue] = useState("");
   const [results, setResults] = useState([]);
   const [results2, setResults2] = useState([]);
   const [borderPosition, setBorderPosition] = useState(0);
@@ -418,8 +403,10 @@ const Home = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(process.env.REACT_APP_BACK_URL + "/voice", {
-        });
+        const response = await axios.get(
+          process.env.REACT_APP_BACK_URL + "/voice",
+          {}
+        );
         setVoiceData(response.data.data);
       } catch (error) {
         console.error("오류 발생:", error);
@@ -481,31 +468,31 @@ const Home = () => {
 
     // 입력을 아에 안했는지 검사
     if (opinion.length < 1) {
-        window.alert("한마디를 입력해주세요!");
-        setOpinion('');
-        return;
+      window.alert("한마디를 입력해주세요!");
+      setOpinion("");
+      return;
     }
     if (phoneNumber.length < 1) {
-        window.alert("전화번호 미입력시 이벤트 응모에 포함되지 않습니다.");
-        setPhoneNumber('응모X');
+      window.alert("전화번호 미입력시 이벤트 응모에 포함되지 않습니다.");
+      setPhoneNumber("응모X");
     }
     try {
-        const signUpResponse = await axios.post( process.env.REACT_APP_BACK_URL + "/voice",
-            {
-                opinion,
-                phoneNumber
-            }
-        );
-        // 성공시
-        if (signUpResponse.data.code === 200) {
-            window.alert("작성 완료");
-            setIsDoneModalOn(false);
+      const signUpResponse = await axios.post(
+        process.env.REACT_APP_BACK_URL + "/voice",
+        {
+          opinion,
+          phoneNumber,
         }
+      );
+      // 성공시
+      if (signUpResponse.data.code === 200) {
+        window.alert("작성 완료");
+        setIsDoneModalOn(false);
+      }
     } catch (error) {
-        console.error("오류 발생:", error);
-
+      console.error("오류 발생:", error);
     }
-};
+  };
 
   return (
     <HomeContainer>
@@ -513,7 +500,7 @@ const Home = () => {
       <Search>
         <SearchBox>
           <SearchIcon src="/image/search.svg"></SearchIcon>
-          <InputBox  
+          <InputBox
             type="text"
             name="search"
             placeholder="무엇이 필요한가요?"
@@ -521,41 +508,48 @@ const Home = () => {
             value={keyword}
             autoComplete="off"
           ></InputBox>
-          {keyword !== "" &&
-          <CancleBtn onClick={handleCancle}>
-            <CancleIcon src="/image/cancle.svg"></CancleIcon>
-          </CancleBtn>}
+          {keyword !== "" && (
+            <CancleBtn onClick={handleCancle}>
+              <CancleIcon src="/image/cancle.svg"></CancleIcon>
+            </CancleBtn>
+          )}
         </SearchBox>
         <ResultBox isVisiable={keyword.length !== 0}>
           <ResultPart isCouncilResult={true}>
-          {results2.map((result, index) => (
-            <Link to={`/councils/${result.councilId}`} key={index}>
-              <CouncilResult>
-              <CouncilImg src={ process.env.REACT_APP_BACK_URL + "/image/" + result.imgPath}></CouncilImg>
-              <CouncilName2>{result.councilName}</CouncilName2>
-              </CouncilResult>
-            </Link>
-          ))}
+            {results2.map((result, index) => (
+              <Link to={`/councils/${result.councilId}`} key={index}>
+                <CouncilResult>
+                  <CouncilImg
+                    src={
+                      process.env.REACT_APP_BACK_URL +
+                      "/image/" +
+                      result.imgPath
+                    }
+                  ></CouncilImg>
+                  <CouncilName2>{result.councilName}</CouncilName2>
+                </CouncilResult>
+              </Link>
+            ))}
           </ResultPart>
           <ResultPart>
-          {results.map((result, index) => (
-            <Link to={`/councils/${result.councilId}`} key={index}>
-              <li>
-                <span>{result.name}</span>
-                <CouncilName>{result.councilName}</CouncilName>
-              </li>
-            </Link>
-          ))}
+            {results.map((result, index) => (
+              <Link to={`/councils/${result.councilId}`} key={index}>
+                <li>
+                  <span>{result.name}</span>
+                  <CouncilName>{result.councilName}</CouncilName>
+                </li>
+              </Link>
+            ))}
           </ResultPart>
 
-          {results.length == 0 && results2.length == 0 ?
-          <li>
-            <NoResult>조회된 물품이 없습니다.</NoResult>
-            {/* <Link to={"/write"}>
+          {results.length == 0 && results2.length == 0 ? (
+            <li>
+              <NoResult>조회된 물품이 없습니다.</NoResult>
+              {/* <Link to={"/write"}>
               <Request>요청하기</Request>
             </Link> */}
-          </li>
-          : null }
+            </li>
+          ) : null}
         </ResultBox>
       </Search>
       <CampusMoveBox>
@@ -564,7 +558,6 @@ const Home = () => {
           isOn={campus === "global"}
         >
           <CampusText isOn={campus === "global"}>글로벌</CampusText>
-      
         </CampusBox>
         <CampusBox
           onClick={() => handleCampusClick("medical", 1)}
@@ -574,95 +567,99 @@ const Home = () => {
         </CampusBox>
 
         <ActiveBorderBox>
-        <ActiveBorder position={borderPosition}>
-          <ActiveBorderColor></ActiveBorderColor>
-        </ActiveBorder>
+          <ActiveBorder position={borderPosition}>
+            <ActiveBorderColor></ActiveBorderColor>
+          </ActiveBorder>
         </ActiveBorderBox>
-       
       </CampusMoveBox>
       <Container>
         <CouncilList campus={campus} />
       </Container>
       <HearTheVoiceBox>
-            <HearTheVoiceTitle>
-              학우들의 소리함
-            </HearTheVoiceTitle>
-            <Voices>
-            {voiceData.map((voice) => (
-              <Voice>{voice.opinion}</Voice>
+        <HearTheVoiceTitle>학우들의 소리함</HearTheVoiceTitle>
+        <Voices>
+          {voiceData.map((voice) => (
+            <Voice>{voice.opinion}</Voice>
           ))}
-            </Voices>
+        </Voices>
 
-            <WriteHearTheVoice onClick={() => {
-              setIsDoneModalOn(true);
-            }}>
-              작성하기
-            </WriteHearTheVoice>
+        <WriteHearTheVoice
+          onClick={() => {
+            setIsDoneModalOn(true);
+          }}
+        >
+          작성하기
+        </WriteHearTheVoice>
       </HearTheVoiceBox>
       <Ad>
-  <Title>리뉴얼 기념 이벤트 · 한마디 남기고 치킨 먹자</Title>
+        <Title>리뉴얼 기념 이벤트 · 한마디 남기고 치킨 먹자</Title>
 
-  <Info>
-    <div><span>방법:</span> 아래 학우들의 소리함에 전화번호와 함께 방명록 남기기</div>
-    <div><span>기간:</span> 9/2 ~ 9/7</div>
-    <div><span>발표:</span> 9/8 오후 1시, 사이트 메인에서 공지</div>
-    <div><span>상품:</span> 황금올리브 치킨 1명 · 스타벅스 아메리카노 2명</div>
-    <div>* 같은 전화번호로 여러 번 응모해도 추첨 확률은 동일합니다.</div>
-  </Info>
-</Ad>
+        <Info>
+          <div>
+            <span>방법:</span> 아래 학우들의 소리함에 전화번호와 함께 방명록
+            남기기
+          </div>
+          <div>
+            <span>기간:</span> 9/2 ~ 9/7
+          </div>
+          <div>
+            <span>발표:</span> 9/8 오후 1시, 사이트 메인에서 공지
+          </div>
+          <div>
+            <span>상품:</span> 황금올리브 치킨 1명 · 스타벅스 아메리카노 2명
+          </div>
+          <div>* 같은 전화번호로 여러 번 응모해도 추첨 확률은 동일합니다.</div>
+        </Info>
+      </Ad>
       <Footer></Footer>
 
-      {isDoneModalOn ?
+      {isDoneModalOn ? (
         <ModalContainer>
           <ModalBox2>
-            <ModalText>
-              작성하기
-            </ModalText>
+            <ModalText>작성하기</ModalText>
 
             <WriteVoiceBox>
-            <TextBoxTitle >
-              한마디
-            </TextBoxTitle>
-            <TextBox 
-             type="text"
-             name="voice"
-             placeholder="응원의 한마디나 요청사항을 적어주세요!"
-            //  onChange={}
-             autoComplete="off"
-             onChange={(e) => {
-              setOpinion(e.target.value);
-          }}>
-
-            </TextBox>
+              <TextBoxTitle>한마디</TextBoxTitle>
+              <TextBox
+                type="text"
+                name="voice"
+                placeholder="응원의 한마디나 요청사항을 적어주세요!"
+                //  onChange={}
+                autoComplete="off"
+                onChange={(e) => {
+                  setOpinion(e.target.value);
+                }}
+              ></TextBox>
             </WriteVoiceBox>
 
             <WriteVoiceBox>
-            <TextBoxTitle>
-              전화번호
-            </TextBoxTitle>
-            <TextBoxSubTitle>
-            * 이벤트 기간에만 수집되는 항목입니다.
-            </TextBoxSubTitle>
-            <TextBoxSubTitle>
-            * 외부에 공개되지 않으며 추첨을 위해서만 사용됩니다.
-            </TextBoxSubTitle>
+              <TextBoxTitle>전화번호</TextBoxTitle>
+              <TextBoxSubTitle>
+                * 이벤트 기간에만 수집되는 항목입니다.
+              </TextBoxSubTitle>
+              <TextBoxSubTitle>
+                * 외부에 공개되지 않으며 추첨을 위해서만 사용됩니다.
+              </TextBoxSubTitle>
 
-            <TextBox 
-             type="text"
-             name="phone"
-             placeholder="010-XXXX-XXXX"
-            //  onChange={}
-             autoComplete="off"
-             onChange={(e) => {
-              setPhoneNumber(e.target.value);
-          }}>
-
-            </TextBox>
+              <TextBox
+                type="text"
+                name="phone"
+                placeholder="010-XXXX-XXXX"
+                //  onChange={}
+                value={phoneNumber}
+                autoComplete="off"
+                onChange={(e) => {
+                  setPhoneNumber(e.target.value);
+                }}
+              ></TextBox>
             </WriteVoiceBox>
             <ModalBtnBox>
-              <ModalBtn onClick={() => {
-                setIsDoneModalOn(false);
-              }} isLeft={true}>
+              <ModalBtn
+                onClick={() => {
+                  setIsDoneModalOn(false);
+                }}
+                isLeft={true}
+              >
                 닫기
               </ModalBtn>
               <ModalBtn onClick={handleAddVoice} isLeft={false}>
@@ -671,7 +668,7 @@ const Home = () => {
             </ModalBtnBox>
           </ModalBox2>
         </ModalContainer>
-        : null}
+      ) : null}
     </HomeContainer>
   );
 };
